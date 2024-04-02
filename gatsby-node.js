@@ -60,6 +60,11 @@ exports.createPages = ({ actions, graphql }) => {
                                             url
                                         }
                                     }
+                                    summary {
+                                        format
+                                        processed
+                                        value
+                                    }
                                 }
                             }
                         }
