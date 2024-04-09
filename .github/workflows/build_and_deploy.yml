@@ -19,6 +19,8 @@ jobs:
       
       - name: Install Project Dependencies
         run: npm ci
+      - name: Print Installed Dependencies
+        run: npm ls gatsby-plugin-mdx
       
       - name: Install Gatsby CLI
         run: npm install -g gatsby-cli@5.13.2
