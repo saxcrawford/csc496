@@ -30,6 +30,7 @@ exports.createPages = ({ actions, graphql }) => {
     const { createPage } = actions
     return new Promise((resolve, reject) => {
         const pageTemplate = path.resolve(`src/pages/recipe.js`)
+        const articleTemplate = path.resolve('src/pages/article.js')
 
         //page building queries
         //field_ragozin_sheet throws graphql errors
@@ -68,6 +69,28 @@ exports.createPages = ({ actions, graphql }) => {
                                 }
                             }
                         }
+                        nodeArticles(first: 100) {
+                            edges {
+                                node {
+                                    changed
+                                    id
+                                    author {
+                                        displayName
+                                    }
+                                    path
+                                    status
+                                    title
+                                    body {
+                                        processed
+                                    }
+                                    mediaImage{
+                                        mediaImage{
+                                            url
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 `
@@ -81,6 +104,7 @@ exports.createPages = ({ actions, graphql }) => {
                 console.log("PAGES");
                 console.log(result.data.Drupal.nodeRecipes);
                 const pages = result.data.Drupal.nodeRecipes.edges;
+                const articles = result.data.Drupal.nodeArticles.edges;
 
                 //result.data.allNodeHorse.edges.forEach(({ node }, index) => {
                 pages.forEach(({ node }, index) => {
@@ -98,6 +122,22 @@ exports.createPages = ({ actions, graphql }) => {
                             nid: node.id,
                             data: node,
                         },
+                    }),
+
+                    articles.forEach(({ node }, index) => {
+                        console.log("PATH: ");
+                        console.log(node.path);
+                        const page_path = node.path
+                        console.log(page_path);
+
+                        createPage({
+                            path: `${page_path}`,
+                            component: articleTemplate,
+                            context: {
+                                nid: node.id,
+                                data: node,
+                            }
+                        })
                     })
                 })
             })
