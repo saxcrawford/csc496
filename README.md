@@ -1,49 +1,60 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+<h1 align="center"> 🍽️ CSC496 Recipe Website </h1>
 
-## 🚀 Quick start
+Welcome to the **CSC496 Recipe Website**, a delightful collection of mouth-watering recipes and insightful articles! This static site, built with the power of Gatsby and React, brings you a seamless browsing experience while tantalizing your taste buds. 🤤
 
-1.  **Create a Gatsby site.**
+## 🌟 Features
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+- 📝 Browse an extensive list of recipes and articles sourced from a Drupal backend
+- 🔍 Dive into individual recipe and article pages, dynamically generated for your convenience
+- 💅 Immerse yourself in a visually stunning design, crafted with Styled Components
+- 📱 Enjoy a responsive layout that adapts perfectly to any device
+- 🚀 Automated build and deployment with GitHub Actions
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## 🚀 Getting Started
 
-2.  **Start developing.**
+If you want to run the project locally or contribute to its development, follow these steps:
 
-    Navigate into your new site’s directory and start it up.
+### 📥 Installation
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+1. Clone the repository:
+```
+git clone https://github.com/saxcrawford/csc496.git
+```
+2. Navigate to the project directory:
+```
+cd csc496
+```
+3. Install the dependencies:
+```
+npm install
+```
+### 🏃‍♀️ Usage
 
-3.  **Open the code and start customizing!**
+1. Start the development server:
+```
+gatsby develop
+```
+2. Open your browser and visit `http://localhost:8000` to view the website.
 
-    Your site is now running at http://localhost:8000!
+3. The GitHub workflow will automatically handle the Gatsby build and deployment processes whenever changes are pushed to the repository.
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## 🗂️ Project Structure
 
-4.  **Learn more**
+- `src/pages/`: Contains the main pages of the website (index, recipes, articles)
+- `src/templates/`: Contains the templates for individual recipe and article pages
+- `src/components/`: Contains reusable components used throughout the website
+- `gatsby-node.js`: Contains the logic for creating dynamic pages based on Drupal data
+- `gatsby-config.js`: Contains the website configuration and plugin settings
+- `.github/workflows/`: Contains the GitHub Actions workflow configuration
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## 📸 Screenshots
 
-## 🚀 Quick start (Netlify)
+### 🍳 Recipe Page
+![Recipe Page](recipes.png)
+![Recipe Example](recipe-example.png)
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+### 📰 Article Page
+![Article Page](articles.png)
+![Article Example](article-example.png)
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+🍽️ Happy cooking and happy coding! 👨‍💻👩‍💻
